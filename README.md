@@ -43,9 +43,9 @@ git push origin feature/nova-funcionalidade
    
 ## Autores
 
-Guilherme Tavares
-Giovanna
-Giordana
+Guilherme Tavares,
+Giovanna,
+Giordana.
 
 ## Licença
 
