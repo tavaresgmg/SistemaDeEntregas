@@ -8,6 +8,11 @@ Alameda,Avenida T-9
 Alameda,Avenida Independência
 Alameda,Avenida 24 de Outubro
 Alameda,Avenida Anhanguera
+
+
+
+
+
 Avenida,Rua 83
 Avenida,Rua 9
 Avenida,Rua 4
@@ -28,6 +33,13 @@ Avenida,Rua 3
 Avenida,Rua 8
 Avenida,Rua 7
 Avenida,Rua 6
+
+
+
+
+
+
+
 Rua,Rua 1
 Rua,Rua 2
 Rua,Rua 5
