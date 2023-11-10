@@ -1,6 +1,6 @@
 # Sistema de Seleção de Rotas de Entrega com Árvores Hierarquizadas
 
-Este é um projeto desenvolvido como parte da disciplina de Algoritmos e Estruturas de Dados 2 (AED2), com o objetivo de criar um Sistema de Seleção de Rotas de Entrega usando árvores hierarquizadas. O projeto é conduzido pelos estudantes Guilherme Tavares, Giovanna, e Giordana.
+Este é um projeto desenvolvido como parte da disciplina de Algoritmos e Estruturas de Dados 2 (AED2), com o objetivo de criar um Sistema de Seleção de Rotas de Entrega usando árvores hierarquizadas. O projeto é conduzido pelos estudantes Guilherme Tavares, Giovana, e Giordana.
 
 ## Funcionalidades Principais
 
@@ -44,7 +44,7 @@ git push origin feature/nova-funcionalidade
 ## Autores
 
 Guilherme Tavares,
-Giovanna,
+Giovana,
 Giordana.
 
 ## Licença
