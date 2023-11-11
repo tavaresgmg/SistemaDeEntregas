@@ -7,18 +7,21 @@ public class TreeNode {
     private String name;
     private boolean flag;
     public TreeNode[] children = new TreeNode[10]; // posições iniciam com null
+    private NodeDisplay nodeDisplay;
 
-    TreeNode(int number, String name, boolean flag) {
+    TreeNode(int number, String name, boolean flag, NodeDisplay nodeDisplay) {
         this.number = number;
         this.name = name;
         this.flag = flag;
+        this.nodeDisplay = nodeDisplay;
     }
 
     public void showNode() {
-        System.out.println("Número: " + this.number);
-        System.out.println("Nome: " + this.name);
-        System.out.println("Flag: " + this.flag);
-        System.out.println();
+        if (nodeDisplay != null) {
+            nodeDisplay.display("Número: " + this.number);
+            nodeDisplay.display("Nome: " + this.name);
+            nodeDisplay.display("Flag: " + this.flag);
+        }
     }
 
     public int getNumber() {
