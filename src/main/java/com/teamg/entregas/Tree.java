@@ -106,4 +106,42 @@ public class Tree {
             }
         }
     }
+    /*
+     void percursoPreOrdem(TreeNode no) {
+            if (no != null) {
+                no.showNode();
+                for (TreeNode child : no.children) {
+                    percursoPreOrdem(child);
+                }
+            }
+        }
+    
+        void percursoCentral(TreeNode no) {
+            if (no != null) {
+            int numChildren = 0;
+            int lastChild = 0;
+            for (int i = 0; i <= 9; i++) {
+                if ( no.children[i] != null ){
+                    numChildren++;
+                    lastChild = i;
+                }
+            }
+            for (int i = 0; i <= 9; i++) {
+                    if ( i == lastChild){
+                        no.showNode();
+                    } 
+                    percursoCentral(no.children[i]);
+            }
+        }
+        }
+    
+        void percursoPosOrdem(TreeNode no) {
+            if (no != null) {
+                for (TreeNode child : no.children) {
+                    percursoPosOrdem(child);
+                }
+                no.showNode();
+            }
+        }
+    */
 }
