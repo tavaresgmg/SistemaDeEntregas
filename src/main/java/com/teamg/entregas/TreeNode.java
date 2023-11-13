@@ -27,4 +27,7 @@ public class TreeNode {
     public int getNumber() {
         return number;
     }
+    public String getName() {
+        return name;
+    }
 }

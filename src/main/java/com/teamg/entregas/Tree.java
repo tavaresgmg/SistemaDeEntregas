@@ -1,5 +1,7 @@
 package com.teamg.entregas;
 
+import java.util.Objects;
+
 public class Tree {
     private final TreeNode root;
     private NodeDisplay nodeDisplay;
@@ -39,6 +41,47 @@ public class Tree {
             }
 
         }
+    }
+
+    public void findRoute(String nome) {
+        String marg, av, r;
+
+        System.out.printf(this.root.getName() + " -> ");
+        for (TreeNode marginal : this.root.children) {
+            if (marginal == null) {
+                continue;
+            }
+            marg = marginal.getName();
+            if (Objects.equals(marg, nome)) {
+                System.out.println(marg);
+                return;
+            }
+
+            for (TreeNode avenida : marginal.children) {
+                if (avenida == null) {
+                    continue;
+                }
+                av = avenida.getName();
+                if (Objects.equals(av, nome)) {
+                    System.out.println(marg + " -> " + av);
+                    return;
+                }
+
+                for (TreeNode rua : avenida.children) {
+                    if (rua == null) {
+                        continue;
+                    }
+                    r = rua.getName();
+                    if (Objects.equals(r, nome)) {
+                        System.out.println(marg + " -> " + av + " -> " + r);
+                        return;
+                    }
+                }
+            }
+        }
+
+
+        System.out.println("Não foi possível encontrar essa Rua.");
     }
 
     public Tree createMap(NodeDisplay nodeDisplay) {
