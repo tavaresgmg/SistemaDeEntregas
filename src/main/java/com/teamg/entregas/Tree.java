@@ -45,15 +45,21 @@ public class Tree {
 
     public void findRoute(String nome) {
         String marg, av, r;
+        boolean interditado = false;
 
-        System.out.printf(this.root.getName() + " -> ");
+
         for (TreeNode marginal : this.root.children) {
             if (marginal == null) {
                 continue;
             }
+            if (!marginal.getFlag()) {
+                interditado = !marginal.getFlag();
+                continue;
+            }
+
             marg = marginal.getName();
             if (Objects.equals(marg, nome)) {
-                System.out.println(marg);
+                System.out.println(this.root.getName() + " -> " + marg);
                 return;
             }
 
@@ -61,9 +67,14 @@ public class Tree {
                 if (avenida == null) {
                     continue;
                 }
+                if (!avenida.getFlag()) {
+                    interditado = !avenida.getFlag();
+                    continue;
+                }
+
                 av = avenida.getName();
                 if (Objects.equals(av, nome)) {
-                    System.out.println(marg + " -> " + av);
+                    System.out.println(this.root.getName() + " -> " + marg + " -> " + av);
                     return;
                 }
 
@@ -71,9 +82,52 @@ public class Tree {
                     if (rua == null) {
                         continue;
                     }
+                    if (!rua.getFlag()) {
+                        interditado = !rua.getFlag();
+                        continue;
+                    }
                     r = rua.getName();
                     if (Objects.equals(r, nome)) {
-                        System.out.println(marg + " -> " + av + " -> " + r);
+                        System.out.println(this.root.getName() + " -> " + marg + " -> " + av + " -> " + r);
+                        return;
+                    }
+                }
+            }
+        }
+
+        if (interditado) {
+            System.out.println("Não foi possível encontrar uma rota. Parte do caminho está interditado.");
+        } else {
+            System.out.println("Não foi possível encontrar uma rota. Essa rua não existe no mapa.");
+        }
+    }
+
+    public void closeNode(String nome) {
+
+        for (TreeNode marginal : this.root.children) {
+            if (marginal == null) {
+                continue;
+            }
+            if (Objects.equals(marginal.getName(), nome)) {
+                marginal.setFlag(false);
+                return;
+            }
+
+            for (TreeNode avenida : marginal.children) {
+                if (avenida == null) {
+                    continue;
+                }
+                if (Objects.equals(avenida.getName(), nome)) {
+                    avenida.setFlag(false);
+                    return;
+                }
+
+                for (TreeNode rua : avenida.children) {
+                    if (rua == null) {
+                        continue;
+                    }
+                    if (Objects.equals(rua.getName(), nome)) {
+                        rua.setFlag(false);
                         return;
                     }
                 }

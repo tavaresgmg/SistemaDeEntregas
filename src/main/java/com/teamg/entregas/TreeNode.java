@@ -30,4 +30,12 @@ public class TreeNode {
     public String getName() {
         return name;
     }
+
+    public void setFlag(boolean flag) {
+        this.flag = flag;
+    }
+
+    public boolean getFlag() {
+        return this.flag;
+    }
 }
