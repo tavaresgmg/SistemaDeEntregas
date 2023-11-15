@@ -120,7 +120,7 @@
                </opaqueInsets></TextField>
             <TextField fx:id="textFieldRuaInterditar" layoutX="18.0" layoutY="121.0" prefHeight="31.0" prefWidth="177.0" promptText="Nome" />
             <TextField layoutX="15.0" layoutY="191.0" prefHeight="26.0" prefWidth="177.0" promptText="Nome" />
-            <Button layoutX="210.0" layoutY="189.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="69.0" text="Rota">
+            <Button layoutX="210.0" layoutY="189.0" mnemonicParsing="false" onAction="#rota" prefHeight="31.0" prefWidth="69.0" text="Rota">
                <font>
                   <Font name="Helvetica" size="13.0" />
                </font>

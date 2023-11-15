@@ -39,7 +39,7 @@ public class Controller {
         clearTextArea();
     }
 
-    public void interditarButton(){
+    public void interditarButton(){ //Ao apertar o botão, a rua informada será interditada
         if(textFieldRuaInterditar != null){
             minhaArvore.closeNode(textFieldRuaInterditar.getText());
         } else {
@@ -63,19 +63,19 @@ public class Controller {
 
     }
 
-    public void mostrarRuas(){
+    public void mostrarRuas(){ //Ao apertar o botão, serão impressas as ruas cadastradas no programa
         minhaArvore.showRuas();
     }
-    public void mostrarAvenidas(){
+    public void mostrarAvenidas(){ //Ao apertar o botão, serão impressas as avenidas cadastradas no programa
         minhaArvore.showAvenidas();
     }
-    public void mostrarMarginais(){
+    public void mostrarMarginais(){ //Ao apertar o botão, serão impressas as marginais cadastradas no programa
         minhaArvore.showMarginais();
     }
 
     @FXML
-    public void handleButtonAction(){
-        //obtendo os numeros inseridos
+    public void handleButtonAction(){ //Ao apertar o botão inserir, será conferido se existe um nome, e um código válido,
+        //após isso, será inserida uma marginal/avenida/rua ao sistema
         Integer marginal = choiceBoxMarginal.getValue();
         Integer avenida = choiceBoxAvenida.getValue();
         Integer rua = choiceBoxRua.getValue();
