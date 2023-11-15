@@ -20,19 +20,19 @@ Este é um projeto desenvolvido como parte da disciplina de Algoritmos e Estrutu
 ## Como Funciona o Projeto
 
 ### Árvore
-- A Raiz é a Empresa que faz as entregas. <br> <br>
+- A Raiz é a Empresa que faz as entregas.
 - Cada nível da árvore representa a hierarquia de cada tipo de via urbana: <br>
    Nível 1 -> Marginais <br>
    Nível 2 -> Avenidas <br>
-   Nível 3 -> Ruas <br> <br>
+   Nível 3 -> Ruas <br>
 
 - Todas as vias são identificadas por números únicos de 3 dígitos sendo: <br>
    1º dígito: representa a marginal na qual esta rua é filha <br>
    2º dígito: representa a avenida na qual esta rua é filha <br>
-   3º dígito: representa a posição da rua no vetor de filhos da avenida <br> <br>
-- Não existe Marginal 0, nem Avenida 0, nem Rua 0 <br> <br>
+   3º dígito: representa a posição da rua no vetor de filhos da avenida <br>
+- Não existe Marginal 0, nem Avenida 0, nem Rua 0 <br>
 - Todas as ruas estão conectadas diretamente a uma avenida, que por sua vez se conectam diretamente com as marginais.
-Não há ruas ligadas diretamente a marginais nesse projeto. <br> <br>
+Não há ruas ligadas diretamente a marginais nesse projeto. <br>
 - **Exemplo 1**: a rua de número 456, significa que é a rua 6, da avenida 5, da marginal 4.
 - **Exemplo 2**: a rua 101 não pode ser colocada, uma vez que seria uma rua conectada diretamente a uma marginal
 - **Exemplo 3**: a via 100 é uma marginal
