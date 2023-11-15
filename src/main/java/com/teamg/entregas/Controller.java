@@ -3,6 +3,12 @@ package com.teamg.entregas;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+
 public class Controller {
     public void clearTextArea() { //limpar o terminal
         textAreaTerminal.setText("");
@@ -29,10 +35,11 @@ public class Controller {
     @FXML
     private TextField textFieldNome;
 
-    private String ruainterditar;
-
     @FXML
     private TextField textFieldRuaInterditar;
+
+    @FXML
+    private TextField ruaRota;
 
     @FXML
     public void cleanTerminal () {
@@ -47,21 +54,51 @@ public class Controller {
         }
 
     }
+    @FXML
     private RadioButton radioButton1;
+    @FXML
     private RadioButton radioButton2;
+    @FXML
     private RadioButton radioButton3;
     public void rota(){
-        if(radioButton1.isSelected()){
-            minhaArvore.findRoute();
-        } else if (radioButton2.isSelected()){
+        minhaArvore.findRoute(ruaRota.getText());
+    }
 
-        } else if (radioButton3.isSelected()){
-
+    public void percurso(){
+        if (radioButton1.isSelected()){
+            minhaArvore.percursoPreOrdem(minhaArvore.getRoot());
+        } else if(radioButton2.isSelected()){
+            minhaArvore.percursoCentral(minhaArvore.getRoot());
+        } else if(radioButton3.isSelected()){
+            minhaArvore.percursoPosOrdem(minhaArvore.getRoot());
         }
     }
-    public void ajuda(){
 
+    public String lerReadme() throws IOException {
+        String conteudo = "";
+
+        conteudo = new String(Files.readAllBytes(Paths.get("README.md")));
+
+        return conteudo;
     }
+
+    public void mostrarReadme() {
+        String readme;
+        try {
+            readme = lerReadme();
+        } catch (IOException e) {
+            e.printStackTrace();
+            readme = "Não foi possível ler o arquivo README.";
+        }
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Ajuda");
+        alert.setHeaderText("Informações do README");
+        alert.setContentText(readme);
+
+        alert.showAndWait();
+    }
+
 
     public void mostrarRuas(){ //Ao apertar o botão, serão impressas as ruas cadastradas no programa
         minhaArvore.showRuas();
@@ -125,8 +162,5 @@ public class Controller {
 
         Tree tempTree = new Tree(text -> appendText(text)); // Criar uma instância temporária de Tree
         minhaArvore = tempTree.createMap(text -> appendText(text));
-
-        TreeNode raiz = minhaArvore.getRoot();
-        minhaArvore.percursoPreOrdem(raiz);
     }
 }

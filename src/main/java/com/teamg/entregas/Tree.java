@@ -59,7 +59,7 @@ public class Tree {
 
             marg = marginal.getName();
             if (Objects.equals(marg, nome)) {
-                System.out.println(this.root.getName() + " -> " + marg);
+                nodeDisplay.display(this.root.getName() + " -> " + marg);
                 return;
             }
 
@@ -74,7 +74,7 @@ public class Tree {
 
                 av = avenida.getName();
                 if (Objects.equals(av, nome)) {
-                    System.out.println(this.root.getName() + " -> " + marg + " -> " + av);
+                    nodeDisplay.display(this.root.getName() + " -> " + marg + " -> " + av);
                     return;
                 }
 
@@ -88,7 +88,7 @@ public class Tree {
                     }
                     r = rua.getName();
                     if (Objects.equals(r, nome)) {
-                        System.out.println(this.root.getName() + " -> " + marg + " -> " + av + " -> " + r);
+                        nodeDisplay.display(this.root.getName() + " -> " + marg + " -> " + av + " -> " + r);
                         return;
                     }
                 }

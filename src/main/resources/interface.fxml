@@ -41,9 +41,9 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -54,39 +54,9 @@
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
-        <Menu mnemonicParsing="false" text="Arquivo">
-          <items>
-            <MenuItem mnemonicParsing="false" text="New" />
-            <MenuItem mnemonicParsing="false" text="Open…" />
-            <Menu mnemonicParsing="false" text="Open Recent" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Close" />
-            <MenuItem mnemonicParsing="false" text="Save" />
-            <MenuItem mnemonicParsing="false" text="Save As…" />
-            <MenuItem mnemonicParsing="false" text="Revert" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Preferences…" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Quit" />
-          </items>
-        </Menu>
-        <Menu mnemonicParsing="false" text="Editar">
-          <items>
-            <MenuItem mnemonicParsing="false" text="Undo" />
-            <MenuItem mnemonicParsing="false" text="Redo" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Cut" />
-            <MenuItem mnemonicParsing="false" text="Copy" />
-            <MenuItem mnemonicParsing="false" text="Paste" />
-            <MenuItem mnemonicParsing="false" text="Delete" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Select All" />
-            <MenuItem mnemonicParsing="false" text="Unselect All" />
-          </items>
-        </Menu>
         <Menu mnemonicParsing="false" text="Ajuda">
           <items>
-            <MenuItem mnemonicParsing="false" onAction="#ajuda" text="Sobre o Programa" />
+            <MenuItem mnemonicParsing="false" onAction="#mostrarReadme" text="Sobre o Programa" />
           </items>
         </Menu>
       </menus>
@@ -119,16 +89,19 @@
                   <Insets />
                </opaqueInsets></TextField>
             <TextField fx:id="textFieldRuaInterditar" layoutX="18.0" layoutY="121.0" prefHeight="31.0" prefWidth="177.0" promptText="Nome" />
-            <TextField layoutX="15.0" layoutY="191.0" prefHeight="26.0" prefWidth="177.0" promptText="Nome" />
+            <TextField fx:id="ruaRota" layoutX="15.0" layoutY="191.0" prefHeight="26.0" prefWidth="177.0" promptText="Nome" />
             <Button layoutX="210.0" layoutY="189.0" mnemonicParsing="false" onAction="#rota" prefHeight="31.0" prefWidth="69.0" text="Rota">
                <font>
                   <Font name="Helvetica" size="13.0" />
                </font>
             </Button>
-            <RadioButton layoutX="9.0" layoutY="243.0" mnemonicParsing="false" onAction="#radioButton1" prefHeight="21.0" prefWidth="110.0" text="Pré-Ordem" />
-            <RadioButton layoutX="9.0" layoutY="272.0" mnemonicParsing="false" onAction="#radioButton2" prefHeight="21.0" prefWidth="110.0" text="In-Ordem" />
-            <RadioButton layoutX="9.0" layoutY="301.0" mnemonicParsing="false" onAction="#radioButton3" prefHeight="21.0" prefWidth="110.0" text="Pós-Ordem" />
-            <Button layoutX="137.0" layoutY="267.0" mnemonicParsing="false" text="Percurso" />
+            <RadioButton fx:id="radioButton1" layoutX="9.0" layoutY="243.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="110.0" text="Pré-Ordem">
+               <toggleGroup>
+                  <ToggleGroup fx:id="meuGrupo" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="radioButton2" layoutX="9.0" layoutY="272.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="110.0" text="In-Ordem" toggleGroup="$meuGrupo" />
+            <RadioButton fx:id="radioButton3" layoutX="9.0" layoutY="301.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="110.0" text="Pós-Ordem" toggleGroup="$meuGrupo" />
+            <Button layoutX="137.0" layoutY="267.0" mnemonicParsing="false" onAction="#percurso" text="Percurso" />
             <TextArea fx:id="textAreaTerminal" editable="false" layoutX="320.0" layoutY="50.0" prefHeight="317.0" prefWidth="302.0" wrapText="true" />
             <Button layoutX="568.0" layoutY="365.0" minHeight="18.0" minWidth="48.0" mnemonicParsing="false" onAction="#cleanTerminal" prefHeight="18.0" prefWidth="48.0" text="Limpar">
                <font>
