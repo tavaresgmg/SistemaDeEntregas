@@ -1,10 +1,8 @@
 package com.teamg.entregas;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextField;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
+
 public class Controller {
     public void clearTextArea() { //limpar o terminal
         textAreaTerminal.setText("");
@@ -19,8 +17,6 @@ public class Controller {
         textAreaTerminal.appendText(text + "\n");
     }
 
-
-
     @FXML
     private ChoiceBox<Integer> choiceBoxMarginal;
 
@@ -33,9 +29,48 @@ public class Controller {
     @FXML
     private TextField textFieldNome;
 
+    private String ruainterditar;
+
+    @FXML
+    private TextField textFieldRuaInterditar;
+
     @FXML
     public void cleanTerminal () {
         clearTextArea();
+    }
+
+    public void interditarButton(){
+        if(textFieldRuaInterditar != null){
+            minhaArvore.closeNode(textFieldRuaInterditar.getText());
+        } else {
+            return;
+        }
+
+    }
+    private RadioButton radioButton1;
+    private RadioButton radioButton2;
+    private RadioButton radioButton3;
+    public void rota(){
+        if(radioButton1.isSelected()){
+            minhaArvore.findRoute();
+        } else if (radioButton2.isSelected()){
+
+        } else if (radioButton3.isSelected()){
+
+        }
+    }
+    public void ajuda(){
+
+    }
+
+    public void mostrarRuas(){
+        minhaArvore.showRuas();
+    }
+    public void mostrarAvenidas(){
+        minhaArvore.showAvenidas();
+    }
+    public void mostrarMarginais(){
+        minhaArvore.showMarginais();
     }
 
     @FXML

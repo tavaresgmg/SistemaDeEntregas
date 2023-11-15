@@ -96,9 +96,9 @@ public class Tree {
         }
 
         if (interditado) {
-            System.out.println("Não foi possível encontrar uma rota. Parte do caminho está interditado.");
+            nodeDisplay.display("Não foi possível encontrar uma rota. Parte do caminho está interditado.");
         } else {
-            System.out.println("Não foi possível encontrar uma rota. Essa rua não existe no mapa.");
+            nodeDisplay.display("Não foi possível encontrar uma rota. Essa rua não existe no mapa.");
         }
     }
 
@@ -110,6 +110,7 @@ public class Tree {
             }
             if (Objects.equals(marginal.getName(), nome)) {
                 marginal.setFlag(false);
+                nodeDisplay.display("Marginal interditada com sucesso!");
                 return;
             }
 
@@ -119,6 +120,7 @@ public class Tree {
                 }
                 if (Objects.equals(avenida.getName(), nome)) {
                     avenida.setFlag(false);
+                    nodeDisplay.display("Avenida interditada com sucesso!");
                     return;
                 }
 
@@ -128,6 +130,7 @@ public class Tree {
                     }
                     if (Objects.equals(rua.getName(), nome)) {
                         rua.setFlag(false);
+                        nodeDisplay.display("Rua interditada com sucesso!");
                         return;
                     }
                 }
@@ -135,7 +138,7 @@ public class Tree {
         }
 
 
-        System.out.println("Não foi possível encontrar essa Rua.");
+        nodeDisplay.display("Não foi possível encontrar essa Rua.");
     }
 
     public Tree createMap(NodeDisplay nodeDisplay) {
