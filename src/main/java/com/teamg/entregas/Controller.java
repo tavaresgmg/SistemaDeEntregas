@@ -125,5 +125,8 @@ public class Controller {
 
         Tree tempTree = new Tree(text -> appendText(text)); // Criar uma instância temporária de Tree
         minhaArvore = tempTree.createMap(text -> appendText(text));
+
+        TreeNode raiz = minhaArvore.getRoot();
+        minhaArvore.percursoPreOrdem(raiz);
     }
 }
