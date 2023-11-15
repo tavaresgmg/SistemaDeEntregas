@@ -206,7 +206,7 @@ public class Tree {
             }
         }
     }
-    /*
+    
      void percursoPreOrdem(TreeNode no) {
             if (no != null) {
                 no.showNode();
@@ -216,7 +216,7 @@ public class Tree {
             }
         }
     
-        void percursoCentral(TreeNode no) {
+     void percursoCentral(TreeNode no) {
             if (no != null) {
             int numChildren = 0;
             int lastChild = 0;
@@ -235,7 +235,7 @@ public class Tree {
         }
         }
     
-        void percursoPosOrdem(TreeNode no) {
+      void percursoPosOrdem(TreeNode no) {
             if (no != null) {
                 for (TreeNode child : no.children) {
                     percursoPosOrdem(child);
@@ -243,5 +243,7 @@ public class Tree {
                 no.showNode();
             }
         }
-    */
+     TreeNode getRoot(){
+            return this.root;
+        }
 }
