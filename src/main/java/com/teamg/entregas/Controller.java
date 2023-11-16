@@ -77,7 +77,7 @@ public class Controller {
     public String lerReadme() throws IOException {
         String conteudo = "";
 
-        conteudo = new String(Files.readAllBytes(Paths.get("README.md")));
+        conteudo = new String(Files.readAllBytes(Paths.get("AJUDA.md")));
 
         return conteudo;
     }
@@ -93,7 +93,7 @@ public class Controller {
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Ajuda");
-        alert.setHeaderText("Informações do README");
+        alert.setHeaderText("Informações do Programa");
         alert.setContentText(readme);
 
         alert.showAndWait();
